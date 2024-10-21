@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-messaging-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-functions-compat.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Report</title>
+</head>
+<body>
+    <div>
+        <input type="file" id="file" accept=".xlsx,.xlsm" onchange="excelConvert(event)">
+    </div>
+    <div>
+        <table id="dataTable">
+            <tbody id="dataTableTbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <textarea id="excel_data" onpaste="handlePaste(event)" placeholder="Paste your Excel data here"></textarea>
+        <button onclick="generateData()">Gen</button><br>
+        <button onclick="removeTable()">RemoveTable</button>
+    </div>
+    <div id="excel_table"></div>
+        
+<script src="main.js"></script>    
+</body>
+</html>
